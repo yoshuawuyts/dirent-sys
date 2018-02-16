@@ -27,4 +27,4 @@ $ cargo add dirent-sys
 [5]: https://img.shields.io/crates/d/dirent-sys.svg?style=flat-square
 [6]: https://crates.io/crate/dirent-sys
 [7]: https://docs.rs/dirent-sys/badge.svg?version=0.1.0
-[8]: https://docs.rs/crate/dirent-sys
+[8]: https://docs.rs/dirent-sys
