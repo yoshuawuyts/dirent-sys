@@ -1,0 +1,6 @@
+[package]
+name = "dirent-sys"
+version = "0.1.0"
+authors = ["Yoshua Wuyts <yoshuawuyts@gmail.com>"]
+
+[dependencies]
