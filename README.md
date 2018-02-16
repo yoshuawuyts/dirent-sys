@@ -21,7 +21,7 @@ $ cargo add dirent-sys
 [Apache-2.0](./LICENSE)
 
 [1]: https://img.shields.io/crates/v/dirent-sys.svg?style=flat-square
-[2]: https://crates.io/crate/dirent-sys
+[2]: https://crates.io/crates/dirent-sys
 [3]: https://img.shields.io/travis/yoshuawuyts/dirent-sys.svg?style=flat-square
 [4]: https://travis-ci.org/choojs/yoshuawuyts/dirent-sys
 [5]: https://img.shields.io/crates/d/dirent-sys.svg?style=flat-square
