@@ -126,7 +126,7 @@ pub type __off_t = ::std::os::raw::c_long;
 pub type __off64_t = ::std::os::raw::c_long;
 pub type __pid_t = ::std::os::raw::c_int;
 #[repr(C)]
-#[derive(Debug, Copy, Clone)]
+#[derive(Debug, Default, Copy, Clone, Hash, PartialOrd, Ord, PartialEq, Eq)]
 pub struct __fsid_t {
   pub __val: [::std::os::raw::c_int; 2usize],
 }
@@ -252,6 +252,23 @@ fn bindgen_test_layout_dirent() {
       stringify!(d_name)
     )
   );
+}
+impl Default for dirent {
+  fn default() -> Self {
+    unsafe { ::std::mem::zeroed() }
+  }
+}
+impl ::std::fmt::Debug for dirent {
+  fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+    write ! ( f , "dirent {{ d_ino: {:?}, d_off: {:?}, d_reclen: {:?}, d_type: {:?}, d_name: [{}] }}" , self . d_ino , self . d_off , self . d_reclen , self . d_type , self . d_name . iter ( ) . enumerate ( ) . map ( | ( i , v ) | format ! ( "{}{:?}" , if i > 0 { ", " } else { "" } , v ) ) . collect :: < String > ( ) )
+  }
+}
+impl ::std::cmp::PartialEq for dirent {
+  fn eq(&self, other: &dirent) -> bool {
+    self.d_ino == other.d_ino && self.d_off == other.d_off
+      && self.d_reclen == other.d_reclen && self.d_type == other.d_type
+      && &self.d_name[..] == &other.d_name[..]
+  }
 }
 pub const DT_UNKNOWN: _bindgen_ty_1 = 0;
 pub const DT_FIFO: _bindgen_ty_1 = 1;
